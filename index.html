@@ -28,18 +28,17 @@
         <p class="hero__description">Imba Framework for Rapid API Development</p>
     </div>
     <div class="hero__code">
-        <pre><code class="language-python">import { @model, Response } from '@harnessflex/framework'
-import { AsyncResponse } from '@harnessflex/framework/lib/Http/AsyncResponse'
-import { NotFoundError } from '@harnessflex/framework/lib/Http/Error/NotFoundError'
+        <pre><code class="language-python">import { @model, Http } from '@harnessflex/framework'
 import { Post } from '../../Models'
 
 export class PostController
 
     @model({ id: Post })
-    @returns(AsyncResponse)
+    @returns(Http.AsyncResponse)
+
     def show { resolve, binding }
         resolve binding.id, do({ response, error })
-            Response.json error ? new NotFoundError('Post Not Found.') : response</code> </pre>
+            Http.Response.json error ? new Http.Error.NotFoundError('Post Not Found.') : response</code> </pre>
     </div>
     <div class="wrapper">
         <div class="installation">
