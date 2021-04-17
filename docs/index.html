@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Description">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="/docs/assets/docsify-vue.css">
+
+  <style>
+    .markdown-section output:after, .markdown-section pre:after {
+      display: none;
+    }
+
+	.markdown-section table {
+		display: inline-table!important;
+	}
+
+	.markdown-section td, .markdown-section th {
+		border: 1px solid #eee;
+	    padding: 14px 13px;
+	}
+
+    .sidebar, .search input, .sidebar-toggle {
+      background: #f8f8f8!important;
+      border-right: unset!important;
+    }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+  <script>
+    window.$docsify = {
+      crossOriginLinks: ['http://localhost:3030'],
+      name: 'Harness Flex',
+      subMaxLevel: 2,
+	  basePath: '/docs/docs',
+      repo: '',
+      // routerMode: 'history',
+      loadSidebar: true,
+      themeColor: '#3F51B5',
+      copyCode: {
+        buttonText : 'Copy to clipboard',
+        errorText  : 'Error',
+        successText: 'Copied'
+      },
+
+	  search: 'auto', // default
+
+      // complete configuration parameters
+      search: {
+        maxAge: 86400000, // Expiration time, the default one day
+        paths: 'auto', // or 'auto'
+        placeholder: 'Type to search',
+		depth: 6,
+		hideOtherSidebarContent: false
+      }
+    }
+
+    if (typeof navigator.serviceWorker !== 'undefined') {
+      navigator.serviceWorker.register('/docs/sw.js')
+    }
+  </script>
+  <!-- Docsify v4 -->
+  <script src="/docs/assets/docsify.js"></script>
+  <script src="/docs/assets/search.js"></script>
+  <script src="/docs/assets/emoji.js"></script>
+  <script src="/docs/assets/copy.js"></script>
+</body>
+</html>
