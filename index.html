@@ -38,7 +38,7 @@ export class PostController
 
     def show { resolve, binding }
         resolve binding.id, do({ response, error })
-            Http.Response.json error ? new Http.Error.NotFoundError('Post Not Found.') : response</code> </pre>
+            Http.Response.json error ? (new Http.Error.NotFoundError 'Post Not Found.') : response</code> </pre>
     </div>
     <div class="wrapper">
         <div class="installation">
